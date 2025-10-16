@@ -132,6 +132,15 @@ section:hover {
   border-left-color: var(--accent-dark); /* Darker accent on hover */
 }
 
+section a {
+    text-decoration: none;
+    color: #b0c4de;
+}
+section a:hover{
+  color:#fe4455;
+  font-weight: bold;
+}
+
 h2 {
   /* Removed border-bottom and h2::after to eliminate the line */
   padding-bottom: 8px; /* Maintain consistent vertical spacing */
