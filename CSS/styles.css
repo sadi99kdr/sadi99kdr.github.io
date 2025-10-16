@@ -1,0 +1,350 @@
+:root {
+  --bg: #222831; /* Deep, muted charcoal grey */
+  --card-bg: #393e46; /* Slightly lighter, warmer grey for cards */
+  --text: #eeeeee; /* Soft off-white for primary text */
+  --light-text: #cccccc; /* Muted light grey for secondary text */
+  --accent: #b0c4de; /* Elegant silver/light steel blue accent */
+  --accent-dark: #8c9fae; /* Slightly darker accent for subtle depth */
+  --radius: 8px; /* Slightly sharper, modern corners */
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft, deep shadow */
+  --hover-shadow: 0 6px 20px rgba(176, 196, 222, 0.2); /* Accent-tinted subtle hover shadow */
+}
+
+body {
+  font-family: 'Open Sans', sans-serif; /* Professional, clean, and highly readable */
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.65; /* Improved readability */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 960px; /* Slightly wider container */
+  margin: auto;
+  padding: 35px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 70px 0 40px;
+  position: relative;
+}
+
+/* Minimalist separator - unchanged */
+header::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background-color: var(--accent);
+  border-radius: 1px;
+}
+
+
+.avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid var(--accent); /* Silver/off-white border */
+  box-shadow: 0 0 0 5px var(--card-bg), var(--shadow); /* Layered shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+.avatar:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 5px var(--card-bg), 0 0 0 8px var(--accent-dark), var(--hover-shadow); /* Subtle accent-tinted shadow on hover */
+}
+
+h1 {
+  margin: 20px 0 8px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.2px;
+}
+
+.lead {
+  color: var(--light-text);
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.btn {
+  background: var(--accent);
+  color: var(--bg); /* Dark text on silver button */
+  padding: 10px 22px;
+  border-radius: var(--radius); /* Rectangular with radius */
+  text-decoration: none;
+  margin: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease-out;
+  border: 1px solid var(--accent);
+  box-shadow: var(--shadow);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.btn:hover {
+  background: var(--accent-dark); /* Darker accent on hover */
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow);
+  color: var(--text); /* Lighter text on darker accent hover */
+}
+
+/* Secondary Button Style */
+.btn.secondary {
+  background: transparent;
+  color: var(--accent); /* Accent text */
+  border: 1px solid var(--accent-dark);
+  box-shadow: none;
+}
+.btn.secondary:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  box-shadow: var(--hover-shadow);
+}
+
+
+/* Section Cards */
+section {
+  background: var(--card-bg);
+  padding: 30px 35px;
+  border-radius: var(--radius);
+  margin-bottom: 25px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 3px solid var(--accent); /* Subtle left accent border */
+}
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--hover-shadow);
+  border-left-color: var(--accent-dark); /* Darker accent on hover */
+}
+
+h2 {
+  /* Removed border-bottom and h2::after to eliminate the line */
+  padding-bottom: 8px; /* Maintain consistent vertical spacing */
+  margin-top: 0;
+  color: var(--text);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  /* Removed position: relative as ::after is gone */
+}
+
+
+/* Skills */
+.skills {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills li {
+  background: rgba(176, 196, 222, 0.1); /* Light transparent accent */
+  color: var(--accent);
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid var(--accent-dark); /* Subtle darker accent border */
+}
+.skills li:hover {
+  background: var(--accent);
+  color: var(--bg); /* Dark text on accent */
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 2px 8px rgba(176, 196, 222, 0.3);
+}
+
+/* Project Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.proj {
+  background-color: var(--bg); /* Projects use main background color */
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 2px solid transparent; /* Prepare for accent border */
+}
+
+.proj:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--hover-shadow);
+  border-bottom-color: var(--accent); /* Accent border on hover */
+}
+
+.proj iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  display: block;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.proj-content {
+  padding: 18px;
+}
+
+.proj h3 {
+  margin: 10px 0 5px;
+  color: var(--text);
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0px 10px;
+}
+
+.proj p{
+    padding: 0px 10px;
+}
+
+.proj h3 a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+.proj h3 a:hover {
+  color: var(--accent); /* Accent on hover */
+}
+
+
+.proj p {
+  color: var(--light-text);
+  font-size: 0.9rem;
+}
+
+/* Experience */
+.experience-item {
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 30px; /* Space for timeline */
+}
+
+/* Dark mode timeline - still uses silver accent */
+.experience-item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  height: calc(100% - 15px);
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), rgba(176, 196, 222, 0.1)); /* Fading silver line */
+}
+
+.experience-item::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  border: 2px solid var(--card-bg); /* Dot background */
+  box-shadow: 0 0 0 2px var(--accent-dark); /* Darker accent outline for the dot */
+}
+
+
+.meta {
+  color: var(--light-text);
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+ul {
+  padding-left: 20px;
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  margin-bottom: 6px;
+  padding-left: 18px;
+  color: var(--light-text);
+}
+
+ul li::before {
+  content: '—'; /* Em dash as bullet */
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--light-text);
+  font-size: 0.85rem;
+  margin-top: 40px;
+  padding-bottom: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08); /* Subtle separator */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+  .lead {
+    font-size: 1rem;
+  }
+  .container {
+    padding: 25px;
+  }
+  .btn {
+    padding: 9px 18px;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .proj iframe {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+  .btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+  .skills li {
+    font-size: 0.8rem;
+  }
+  section {
+    padding: 25px 20px;
+  }
+  .proj-content {
+    padding: 15px;
+  }
+}

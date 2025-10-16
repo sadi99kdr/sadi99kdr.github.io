@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sadiqali Eraparamban — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="C:/Users/sadiq/OneDrive/Desktop/Portfolio/CSS/styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/583231?v=4" alt="Sadiqali Avatar" />
+      <h1>Sadiqali Eraparamban</h1>
+      <p class="lead">Unity Software Engineer • C# • Python • Real-Time Interactive Systems</p>
+
+      <div class="links">
+        <a href="mailto:sadi99kdr@gmail.com" class="btn">📧 Email</a>
+        <a href="https://linkedin.com/in/sadiqaliep" target="_blank" class="btn">💼 LinkedIn</a>
+        <a href="https://github.com/sadiqaliep" target="_blank" class="btn">🐙 GitHub</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- About -->
+      <section>
+        <h2>About</h2>
+        <p>I’m a <strong>Unity Software Engineer</strong> passionate about building real-time interactive systems that connect the physical and digital worlds. 
+        I love integrating hardware, sensors, and AI to create immersive experiences.</p>
+      </section>
+
+      <!-- Skills -->
+      <section>
+        <h2>Key Skills</h2>
+        <ul class="skills">
+          <li>Unity</li><li>C#</li><li>Python</li><li>UDP / TCP</li>
+          <li>TouchDesigner</li><li>Arduino</li><li>Git</li><li>Real-time Systems</li>
+        </ul>
+      </section>
+
+      <!-- Projects -->
+      <section>
+        <h2>Experiential Tech Projects</h2>
+        <div class="projects-grid">
+          <div class="proj">
+            <iframe class="yt-video" src="https://www.youtube.com/embed/nPh5HzsfCgY" title="Tic Tac Toe with Robotic Arm" allowfullscreen></iframe>
+            <h3>Projection mapping</h3>
+            <p>Interactive projection mapping using a LiDAR sensor that adapts visuals to the environment in real-time.</p>
+          </div>
+
+          <div class="proj">
+            <iframe class="yt-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&mute=1" title="Real-Time Video Generation" allowfullscreen></iframe>
+            <h3>Interactive Video Player in Unity – Tap to Play!</h3>
+            <p>Watch this Unity application in action! Users can interact with buttons to play videos instantly. A simple and engaging example of creating interactive experiences with Unity’s UI and video system.</p>
+          </div>
+
+          <div class="proj">
+            <iframe class="yt-video" src="https://youtube.com/embed/XKyAOJTd0aA?si=wKnNZZQN2X8tM3Pr" title="Interactive POS System" allowfullscreen></iframe>
+            <h3>Create Videos in Real-Time with Unity & TouchDiffusion!</h3>
+            <p>Interact with Unity to generate videos instantly using TouchDiffusion! Watch AI-powered visuals come to life in real-time..</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section>
+        <h2>Experience</h2>
+        <div class="job">
+          <h3>Software Engineer — Magna Innovations</h3>
+          <p class="meta">Dubai, UAE • Feb 2024 — May 2025</p>
+          <ul>
+            <li>Developed interactive kiosks and immersive AR/VR systems using Unity and C#.</li>
+            <li>Integrated sensors, cameras, and lighting via UDP/TCP communication.</li>
+            <li>Collaborated with creative teams to deliver live event installations.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Achievements -->
+      <section>
+        <h2>Achievements</h2>
+        <p>🏆 Part of the Magna Innovations team that won the <strong>WOW Award</strong> for Exhibition Presence / Brand Activation.</p>
+      </section>
+
+      <!-- Contact -->
+      <section>
+        <h2>Contact</h2>
+        <p>Let’s collaborate! Reach out at <a href="mailto:sadi99kdr@gmail.com">sadi99kdr@gmail.com</a> or connect on <a href="https://linkedin.com/in/sadiqaliep" target="_blank">LinkedIn</a>.</p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>Made with ❤️ by Sadiqali • Hosted on GitHub Pages</p>
+    </footer>
+  </div>
+
+  <!-- YouTube API + hover autoplay -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let players = [];
+    function onYouTubeIframeAPIReady() {
+      document.querySelectorAll('.yt-video').forEach((iframe, i) => {
+        players[i] = new YT.Player(iframe);
+
+        iframe.addEventListener('mouseenter', () => {
+          players[i].mute();
+          players[i].playVideo();
+        });
+
+        iframe.addEventListener('mouseleave', () => {
+          players[i].pauseVideo();
+        });
+      });
+    }
+  </script>
+</body>
+</html>
